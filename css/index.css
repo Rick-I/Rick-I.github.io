@@ -1,0 +1,150 @@
+body {
+    font-family: 'Cairo', sans-serif;
+    padding: 0 1%;
+    max-width: 950px;
+    margin: 5% auto;
+    line-height: 1;
+    background-color: rgb(234, 245, 255);
+}
+
+body h1 {
+    font-size: 3rem;
+    margin: 1%;
+}
+
+.flex {
+    display: flex;
+}
+
+.profile {
+    width: 50%;
+    text-align: center;
+}
+
+.profile h1 {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.profile img {
+    width: 20%;
+    border-radius: 50%;
+    margin-top: 10px;
+    vertical-align: middle;
+    background-color: white;
+}
+
+.info {
+    width: 50%;
+    text-align: center;
+}
+
+.info h1 {
+    margin-top: 5%;
+}
+
+.language {
+    width: 50%;
+    text-align: center;
+}
+
+.os {
+    width: 50%;
+    text-align: center;
+}
+
+.profile p {
+    line-height: 2;
+    font-size: 1.2rem;
+    text-align: left;
+    margin: 3% 10%;
+}
+
+.info p {
+    font-size: 1.5rem;
+    margin: 5%;
+}
+
+.app h1, .web h1 {
+    font-size: 2.5rem;
+    margin: 8% 1% 4% 1%;
+    display: inline-block;
+    border-bottom: solid 3px rgb(177, 233, 255);
+    border-image: linear-gradient(to right, rgb(177, 233, 255) 0%, rgb(0,150,200) 100%) 1;
+}
+
+.apps {
+    padding: 0%;
+    width : calc(94% / 3);
+    height: auto;
+    border: solid 1px;
+    border-radius: 10px;
+    margin: 1%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 1s;
+}
+
+.apps.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.apps img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+    border-bottom: solid 1px;
+}
+
+.apps h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.apps:hover {
+    transform: scale(1.05);
+}
+
+.popup {
+    width: 40%;
+    height: auto;
+    background-color: white;
+    position: fixed;
+    top: 15%;
+    left: 30%;
+    border: solid 1px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.popup p {
+    line-height: 1;
+    font-size: 1.2rem;
+    margin: 1%;
+}
+
+.popup img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    border-bottom: solid 1px;
+}
+
+.popup a {
+    margin-right: 3%;
+}
+
+.fade_white {
+    background: rgba(255, 255, 255);
+}
+
+#fade {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.1);
+}
