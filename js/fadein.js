@@ -1,0 +1,3 @@
+$(function() {
+    $(".apps").addClass("show");
+});
