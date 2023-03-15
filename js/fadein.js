@@ -1,3 +1,0 @@
-$(function() {
-    $(".apps").addClass("show");
-});
