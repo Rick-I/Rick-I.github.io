@@ -3,21 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <title>index</title>
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="style.css" />
     <!--font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap" rel="stylesheet">
-    <!--javascript-->
-    <script src="js/jquery-3.6.3.min.js"></script>
-    <script src="js/popup.js"></script>
-    <script src="js/fadein.js"></script>
 </head>
 <body>
     <div class="fade_white">
     <div class="flex">
         <div class="profile">
-            <img src="src/portfolio_logo.png">
+            <img src="../src/portfolio_logo.png">
             <h1>Riku Ishihara</h1>
             <p>
                 I am a student learning computer and programing in university.
@@ -29,16 +25,17 @@
         <div class="info">
             <h1>PROFILE</h1>
             <div class="flex">
-                <div class="language">
+                <div class="info__language">
                     <h2>LANGUAGE</h2>
                     <p>HTML</p>
                     <p>CSS</p>
                     <p>JavaScript</p>
                     <p>Python</p>
                     <p>Java</p>
+                    <p>C</p>
                     
                 </div>
-                <div class="os">
+                <div class="info__os">
                     <h2>Library Framework</h2>
                     <p>jQuery</p>
                     <p>Django</p>
@@ -49,71 +46,79 @@
             </div>
         </div>
     </div>
-    <div class="app">
-        <h1>APP</h1>
-        <div class="flex">
-            <div id="app1" class="apps">
-                <img src="src/number_counter_logo.png">
-                <h2>Number Counter</h2>
-            </div>
-            <div id="app2" class="apps">
-                <img src="src/sample2.png">
-                <h2>title</h2>
-            </div>
-            <div id="app3" class="apps">
-                <img src="src/sample2.png">
-                <h2>title</h2>
+    <div id="content">
+        <div class="app">
+            <h1>APP</h1>
+            <div class="flex">
+                <div id="app1" class="apps" @click="display('app1')">
+                    <img src="../src/number_counter_logo.png">
+                    <h2>Number Counter</h2>
+                </div>
+                <div id="app2" class="apps" @click="display('app2')">
+                    <img src="../src/sample2.png">
+                    <h2>title</h2>
+                </div>
+                <div id="app3" class="apps" @click="display('app3')">
+                    <img src="../src/sample2.png">
+                    <h2>title</h2>
+                </div>
             </div>
         </div>
+        <div class="web">
+            <h1>WEB</h1>
+            <div class="flex">
+                <div id="web1" class="apps" @click="display('web1')">
+                    <img src="../src/sample2.png">
+                    <h2>title</h2>
+                </div>
+                <div id="web2" class="apps" @click="display('web2')">
+                    <img src="../src/sample2.png">
+                    <h2>title</h2>
+                </div>
+                <div id="web3" class="apps" @click="display('web3')">
+                    <img src="../src/sample2.png">
+                    <h2>title</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- popup -->
+        <div id="popup_app1" class="popup" v-show="apps.app1">
+            <img src="../src/number_counter_2_1.png">
+            <p>This is an app of Counter.</p>
+            <p>This app has useful features like to enter numbers </p>
+            <p>or Increase / decrease button for each digit.</p>
+            <p><b>Java</b></p>
+            <a href="https://play.google.com/store/apps/details?id=com.exa.count_app">Google Play  </a>
+            <a href="https://github.com/Rick-I/Countapp">Sorce Code</a>
+        </div>
+        <div id="popup_app2" class="popup" v-show="apps.app2">
+            <img src="../src/sample2.png">
+            <p>popup2</p>
+        </div>
+        <div id="popup_app3" class="popup" v-show="apps.app3">
+            <img src="../src/sample2.png">
+            <p>popup3</p>
+        </div>
+        <div id="popup_web1" class="popup" v-show="apps.web1">
+            <img src="../src/sample2.png">
+            <p>popup4</p>
+        </div>
+        <div id="popup_web2" class="popup" v-show="apps.web2">
+            <img src="../src/sample2.png">
+            <p>popup5</p>
+        </div>
+        <div id="popup_web3" class="popup" v-show="apps.web3">
+            <img src="../src/sample2.png">
+            <p>popup6</p>
+        </div>
+        <div id="fade" v-show="fade" @click="hide()"></div>
     </div>
-    <div class="web">
-        <h1>WEB</h1>
-        <div class="flex">
-            <div id="web1" class="apps">
-                <img src="src/sample2.png">
-                <h2>title</h2>
-            </div>
-            <div id="web2" class="apps">
-                <img src="src/sample2.png">
-                <h2>title</h2>
-            </div>
-            <div id="web3" class="apps">
-                <img src="src/sample2.png">
-                <h2>title</h2>
-            </div>
-        </div>
     </div>
 
-    <div id="popup_app1" class="popup" style="display: none;">
-        <img src="src/number_counter_2_1.png">
-        <p>This is an app of Counter.</p>
-        <p>This app has useful features like to enter numbers </p>
-        <p>or Increase / decrease button for each digit.</p>
-        <p><b>Java</b></p>
-        <a href="https://play.google.com/store/apps/details?id=com.exa.count_app">Google Play  </a>
-        <a href="https://github.com/Rick-I/Countapp">Sorce Code</a>
-    </div>
-    <div id="popup_app2" class="popup" style="display: none;">
-        <img src="src/sample2.png">
-        <p>popup2</p>
-    </div>
-    <div id="popup_app3" class="popup" style="display: none;">
-        <img src="src/sample2.png">
-        <p>popup3</p>
-    </div>
-    <div id="popup_web1" class="popup" style="display: none;">
-        <img src="src/sample2.png">
-        <p>popup4</p>
-    </div>
-    <div id="popup_web2" class="popup" style="display: none;">
-        <img src="src/sample2.png">
-        <p>popup5</p>
-    </div>
-    <div id="popup_web3" class="popup" style="display: none;">
-        <img src="src/sample2.png">
-        <p>popup6</p>
-    </div>
-    <div id="fade" style="display: none;"></div>
-    </div>
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.11/dist/vue.js"></script>
+    <script src="vue.js"></script>
 </body>    
 </html>
